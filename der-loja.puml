@@ -9,7 +9,7 @@ skinparam entity {
   FontColor #0F172A
 }
 
-entity ATS_CLIENTE as cliente {
+entity "ATS_CLIENTE" as cliente {
   * cliente_id : NUMBER <<PK>>
   --
   * nome : VARCHAR2(100) <<NN>>
@@ -19,7 +19,7 @@ entity ATS_CLIENTE as cliente {
   * status_cliente : CHAR(1) <<CK>>
 }
 
-entity ATS_ENDERECO as endereco {
+entity "ATS_ENDERECO" as endereco {
   * endereco_id : NUMBER <<PK>>
   --
   * cliente_id : NUMBER <<FK, NN>>
@@ -32,7 +32,7 @@ entity ATS_ENDERECO as endereco {
   * uf : CHAR(2) <<CK>>
 }
 
-entity ATS_CATEGORIA as categoria {
+entity "ATS_CATEGORIA" as categoria {
   * categoria_id : NUMBER <<PK>>
   --
   * nome : VARCHAR2(80) <<UK, NN>>
@@ -40,7 +40,7 @@ entity ATS_CATEGORIA as categoria {
   * ativo : CHAR(1) <<CK>>
 }
 
-entity ATS_PRODUTO as produto {
+entity "ATS_PRODUTO" as produto {
   * produto_id : NUMBER <<PK>>
   --
   * categoria_id : NUMBER <<FK, NN>>
@@ -51,7 +51,7 @@ entity ATS_PRODUTO as produto {
   * ativo : CHAR(1) <<CK>>
 }
 
-entity ATS_PEDIDO as pedido {
+entity "ATS_PEDIDO" as pedido {
   * pedido_id : NUMBER <<PK>>
   --
   * cliente_id : NUMBER <<FK, NN>>
@@ -61,7 +61,7 @@ entity ATS_PEDIDO as pedido {
   * valor_total : NUMBER(12,2) <<CK>>
 }
 
-entity ATS_ITEM_PEDIDO as item {
+entity "ATS_ITEM_PEDIDO" as item {
   * pedido_id : NUMBER <<PK, FK>>
   * produto_id : NUMBER <<PK, FK>>
   --
@@ -70,7 +70,7 @@ entity ATS_ITEM_PEDIDO as item {
   * desconto_percentual : NUMBER(5,2) <<CK>>
 }
 
-entity ATS_PAGAMENTO as pagamento {
+entity "ATS_PAGAMENTO" as pagamento {
   * pagamento_id : NUMBER <<PK>>
   --
   * pedido_id : NUMBER <<FK, UK, NN>>
@@ -81,7 +81,7 @@ entity ATS_PAGAMENTO as pagamento {
   * data_pagamento : DATE <<NN>>
 }
 
-entity ATS_ENTREGA as entrega {
+entity "ATS_ENTREGA" as entrega {
   * entrega_id : NUMBER <<PK>>
   --
   * pedido_id : NUMBER <<FK, UK, NN>>
